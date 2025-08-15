@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eri Bank</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/0bedb91e7e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+
+     <header>
+    <nav>
+        <div class="logo">Bank of Eritrea</div>
+        <ul class="nav-links">
+            <li> <a href="#home">Home</a></li>
+            <li> <a href="#about">About</a></li>
+            <li> <a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+   </header>
+
+    <div class="container">
+      <div class="account-summary box">
+        <div class="balance">
+          <span>Balance: </span><span id="balance"></span>
+        </div>
+        <div class="summary">
+          <div class="account-info">
+            <h3 class="card-title">Account Summary</h3>
+            <div class="card-body">
+              <span><strong>Account Type: </strong></span
+              ><span id="account-type"></span><br />
+              <span><strong>Sort Code: </strong></span
+              ><span id="sort-code"></span><br />
+              <span><strong>Account Number: </strong></span
+              ><span id="account-number"></span><br />
+            </div>
+          </div>
+          <div class="logo">
+            <img src="images/EriBank.png" alt="Eri Bank Logo" style="width: 150px" />
+            <button class="btn" onclick="openModal('modal-1')">
+              Add Account
+            </button>
+            <button class="btn" onclick="openModal('modal-2')">Add User</button>
+          </div>
+          <div class="user-info">
+            <h3 class="card-title">Account Holder</h3>
+            <div class="card-body">
+              <span><strong>Name: </strong></span><span id="fullname"></span
+              ><br />
+              <span><strong>Email: </strong></span><span id="email"></span
+              ><br />
+              <span><strong>Telephone: </strong></span><span id="tel"></span
+              ><br />
+              <span><strong>Address: </strong></span><br /><span
+                id="address"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="account-actions box">
+        <div class="actions-container">
+          <div class="action-search">
+            <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search by account number" />
+            <button class="btn-find">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="btn">All Users</button>
+          </div>
+          <div>
+            <button class="btn" id="deposit">
+              <i class="fa-solid fa-money-bill-trend-up"></i> Deposit
+            </button>
+            <button class="btn" id="transfer">
+              <i class="fa-solid fa-money-bill-transfer"></i> Transfer
+            </button>
+            <button class="btn" id="withdraw">
+              <i class="fa-solid fa-diagram-predecessor"></i> Withdraw
+            </button>
+            <button class="btn">
+              <i class="fa-solid fa-print"></i> Print Statement
+            </button>
+          </div>
+          <div class="toggle deposit">
+            <fieldset>
+              <legend>Deposit</legend>
+              <div>
+              <label for="depositAmount">Deposit Amount: £</label>
+              <input
+                type="number"
+                name="depositAmount"
+                id="depositAmount"
+              /><br />
+            </div>
+            <div>
+              <button class="btn">Deposit</button>
+            </div>
+            </fieldset>
+          </div>
+          <div class="toggle transfer">
+            <fieldset>
+              <legend>Transfer</legend>
+              <div>
+                <label for="source-account">Source Account:</label>
+                <select name="source-account" id="source-account">
+                  <option value="">From</option>
+                  <option value="AC12345">AC12345</option>
+                  <option value="AC12312">AC12312</option>
+                  <option value="AC56789">AC56789</option>
+                  <option value="AC67890">AC67890</option>
+                </select>
+              </div>
+              <div>
+                <label for="destination-account">Target Account:</label>
+                <select name="destination-account" id="destination-account">
+                  <option value="">To</option>
+                  <option value="AC12345">AC12345</option>
+                  <option value="AC12312">AC12312</option>
+                  <option value="AC56789">AC56789</option>
+                  <option value="AC67890">AC67890</option>
+                </select>
+              </div>
+              <div>
+                <label for="amount">Amount: £</label>
+                <input type="number" name="amount" id="amount" /><br />
+              </div>
+              <div>
+                <button class="btn">Transfer</button>
+              </div>
+            </fieldset>
+          </div>
+          <div class="toggle withdraw">
+            <fieldset>
+              <legend>Withdraw</legend>
+              <div>
+              <label for="withdrawAmount">Withdraw Amount: £</label>
+              <input
+                type="number"
+                name="withdrawAmount"
+                id="withdrawAmount"
+              /><br />
+            </div>
+            <div>
+              <button class="btn">Withdraw</button>
+            </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      <div class="account-transactions box">
+        <h3 class="card-title">Transactions</h3>
+        <table>
+          <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Source</th>
+            <th>Target</th>
+            <th>Balance</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="forex-rates box">
+  <h3 class="card-title">Forex Exchange Rates</h3>
+  <table>
+    <tr>
+      <th>Currency</th>
+      <th>Buy (ETB)</th>
+      <th>Sell (ETB)</th>
+    </tr>
+    <tr><td>USD</td><td>125</td><td>130</td></tr>
+    <tr><td>EUR</td><td>140</td><td>145</td></tr>
+    <tr><td>GBP</td><td>160</td><td>165</td></tr>
+    <tr><td>JPY</td><td>0.85</td><td>0.90</td></tr>
+    <tr><td>AED</td><td>34</td><td>36</td></tr>
+    <tr><td>CHF</td><td>135</td><td>138</td></tr>
+    <tr><td>CAD</td><td>98</td><td>102</td></tr>
+    <tr><td>AUD</td><td>90</td><td>93</td></tr>
+    <tr><td>SEK</td><td>12</td><td>13</td></tr>
+    <tr><td>NZD</td><td>85</td><td>88</td></tr>
+  </table>
+</div>
+
+<section id="about" class="about">
+    <h2>About</h2>
+    <p>“EriBank is a mini banking system created as part of our JavaScript assignment.
+It simulates core banking operations like deposit, withdrawal, and transfer.
+Built with HTML, CSS, and JavaScript, it focuses on clean design and real-time updates.”
+    </p>
+   </section>
+
+   <section id="contact" class="contact">
+    <h2>Contact us</h2>
+    <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Your Message</button>
+    </form>
+   </section>
+
+   <footer>
+    <p>&copy; 2025 EriBank. All rights reserved</p>
+    <div class="social-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+   </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
