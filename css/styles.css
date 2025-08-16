@@ -1,3 +1,4 @@
+/* Header */
 body {
     font-family: "Arial", sans-serif;
     margin: 0;
@@ -239,7 +240,8 @@ td, th {
 	font-size: 14px;
 	}
 
-
+  /* forex-rates */
+  
     .forex-rates {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
