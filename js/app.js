@@ -167,9 +167,9 @@ document.querySelector(".btn-find").addEventListener("click", function () {
     updateAccountDisplay();
 });
 
-// ============================
+
 // Account Display Initializer
-// ============================
+
 let currentUser = usersList[0]; // Default logged-in user (Nate)
 let currentAccount = [...currentUser.accounts.values()][0];
 
@@ -196,9 +196,8 @@ function addTransactionRow(type, amount, source, target, balance) {
     row.insertCell(5).textContent = `£${balance.toFixed(2)}`;
 }
 
-// ============================
 // Deposit
-// ============================
+
 document.querySelector('.deposit button').addEventListener('click', function() {
     let amount = parseFloat(document.getElementById('depositAmount').value);
     if (isNaN(amount) || amount <= 0) {
@@ -211,9 +210,9 @@ document.querySelector('.deposit button').addEventListener('click', function() {
     document.getElementById('depositAmount').value = "";
 });
 
-// ============================
+
 // Withdraw
-// ============================
+
 document.querySelector('.withdraw button').addEventListener('click', function() {
     let amount = parseFloat(document.getElementById('withdrawAmount').value);
     if (isNaN(amount) || amount <= 0) {
@@ -230,9 +229,9 @@ document.querySelector('.withdraw button').addEventListener('click', function() 
     document.getElementById('withdrawAmount').value = "";
 });
 
-// ============================
+
 // Transfer (with confirm + success)
-// ============================
+
 document.querySelector('.transfer button').addEventListener('click', function() {
     let sourceAccNo = document.getElementById('source-account').value;
     let targetAccNo = document.getElementById('destination-account').value;
@@ -281,14 +280,14 @@ document.querySelector('.transfer button').addEventListener('click', function() 
     alert("Transferred successfully!");
 });
 
-// ============================
+
 // Initial Load
-// ============================
+
 updateAccountDisplay();
 
-// ============================
+
 // Contact form submission
-// ============================
+
 document
   .getElementById("contact-form")
   .addEventListener("submit", function (e){
